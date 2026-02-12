@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0a0a0a;
+    color:#ffffff;
+}
+
+/* HEADER */
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0a0a0a;
+    border-bottom:1px solid #1a1a1a;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:700;
+    font-size:22px;
+    color:#d4af37;
+    letter-spacing:2px;
+}
+
+.navbar{
+    display:flex;
+    gap:30px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#c0c0c0;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#d4af37;
+}
+
+/* HERO */
+.home{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
+
+.home h1{
+    font-size:55px;
+    color:#ffffff;
+}
+
+.home h3{
+    color:#d4af37;
+}
+
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:2px solid #d4af37;
+    color:#d4af37;
+    text-decoration:none;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:#d4af37;
+    color:#0a0a0a;
+}
+
+/* SECTION */
+section{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#d4af37;
+}
+
+/* SKILLS */
+.skill{
+    margin:20px 0;
+    text-align:left;
+}
+
+.progress{
+    background:#1a1a1a;
+    height:8px;
+}
+
+.progress span{
+    display:block;
+    height:8px;
+    background:#d4af37;
+    transition:1.5s ease;
+}
+
+/* PROJECT */
+.project-card{
+    background:#1a1a1a;
+    padding:30px;
+    margin:20px auto;
+    border:1px solid #c0c0c0;
+    transition:0.4s;
+    max-width:600px;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:#d4af37;
+}
+
+/* CONTACT */
+.social a{
+    font-size:24px;
+    margin:10px;
+    color:#c0c0c0;
+    transition:0.3s;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+/* FOOTER */
+footer{
+    padding:20px;
+    background:#000;
+    color:#c0c0c0;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .navbar{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#0a0a0a;
+        flex-direction:column;
+        display:none;
+        padding:20px;
+    }
+
+    .navbar.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+        color:#d4af37;
+        font-size:28px;
+    }
+
+    .home h1{
+        font-size:35px;
+    }
+}
