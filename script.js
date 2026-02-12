@@ -1,13 +1,12 @@
-// Typed Animation
-var typed = new Typed(".text", {
-    strings: ["Lawyer", "Data Analyst", "Cyber Law Enthusiast"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
+// Typed animation
+new Typed(".text", {
+    strings: ["Cyber Law Specialist", "Criminal Law Advocate", "Legal Data Analyst"],
+    typeSpeed: 70,
+    backSpeed: 50,
     loop: true
 });
 
-// Mobile Menu Toggle
+// Mobile menu
 const menu = document.querySelector(".menu-toggle");
 const navbar = document.querySelector(".navbar");
 
@@ -15,22 +14,23 @@ menu.onclick = () => {
     navbar.classList.toggle("active");
 };
 
-// Active Nav on Scroll
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+// Scroll reveal animation
+const elements = document.querySelectorAll("section, .project-card, .skill");
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+window.addEventListener("scroll", () => {
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        const screen = window.innerHeight;
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
+        if(position < screen - 100){
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
         }
     });
-};
+});
+
+elements.forEach(el=>{
+    el.style.opacity="0";
+    el.style.transform="translateY(40px)";
+    el.style.transition="1s ease";
+});
